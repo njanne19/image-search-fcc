@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Importing Mongoose Schema
 const searchTerm = require('./models/searchTerm');
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/searchTerms');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://njanne19:link@ds125262.mlab.com:25262/image-search');
 
 
 app.use(bodyParser.json());
