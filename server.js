@@ -60,7 +60,6 @@ app.get('/api/imagesearch/:searchVal*', (req, res, next) => {
     skip: (10 * offset)
   }, function(error, rez, body) {
     let bingData = [];
-
     for (var i = 0; i < 10; i++) {
       bingData.push({
         url: body.value[i].webSearchUrl,
