@@ -5,9 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
-const Bing = require('node-bing-api')({
-  accKey: 'ad66f89d3a0c4a3c9c673dcf91bbb60f'
-});
+const Bing = require('node-bing-api')({accKey: 'ad66f89d3a0c4a3c9c673dcf91bbb60f'});
 var jade = require('jade');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -46,8 +44,6 @@ app.get('/api/imagesearch/:searchVal*', (req, res, next) => {
       res.send('Error Saving');
     }
   });
-
-
 
   var searchOffset;
   if (offset) {
