@@ -59,6 +59,9 @@ app.get('/api/imagesearch/:searchVal*', (req, res, next) => {
     top: (10 * searchOffset),
     skip: (10 * offset)
   }, function(error, rez, body) {
+    if (error) {
+      console.error;
+    }
     let bingData = [];
     for (var i = 0; i < 10; i++) {
       bingData.push({
@@ -85,7 +88,7 @@ app.get('/api/recent', (req, res, next) => {
         "time-stamp": data[i].searchDate
       });
     }
-    res.json(historyData);
+    res.json(historyData.reverse());
   });
 });
 
